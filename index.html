@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design++ 设计灵感库 | 瑶叶</title>
+<meta name="description" content="Design++：瑶叶整理的 53 个设计灵感网站，分成 10 个方向。翻一翻，挑一个，直接打开。">
+<meta name="theme-color" content="#ececee">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/serif.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="ld-word">Design<em>++</em></div>
+  <div class="ld-bar"><i id="ldBar"></i></div>
+  <div class="ld-num mono"><span id="ldN">000</span> / 100</div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="Design++ 首页"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#yy-logo"/></svg><b>Design<em>++</em></b></a>
+  <nav class="links" aria-label="页面导航">
+    <a href="#ring">精选</a><a href="#index">目录</a><a href="#library">全部</a><a href="#contact">联系</a>
+  </nav>
+  <a class="nav-cta" href="#library">打开灵感库 <span aria-hidden="true">→</span></a>
+</header>
+
+<main>
+  <section class="sec hero" id="top" aria-label="首屏">
+    <div class="pin">
+      <div class="field" id="field"><div class="field-in" id="fieldIn"></div></div>
+      <h1 class="hero-t" id="heroT">
+        <span class="ln l1 split">Seen it all.</span>
+        <span class="ln l2"><span class="split">Now make it</span> <em class="split">yours.</em></span>
+      </h1>
+      <p class="hero-sub" id="heroSub">瑶叶整理的 <b>53</b> 个设计灵感网站，分成 <b>10</b> 个方向。<br>翻一翻，挑一个，直接打开。</p>
+      <p class="hint mono" id="hint">Scroll <span>向下滚动</span></p>
+    </div>
+  </section>
+
+  <section class="sec ring" id="ring" aria-label="精选环幕">
+    <div class="pin">
+      <div class="ring-head" id="ringHead">
+        <p class="mono">01 — Picks 精选</p>
+        <h2>转一圈，<br>先看这 <span id="pickN">11</span> 个。</h2>
+      </div>
+      <div class="ring-stage"><div class="ring-rot" id="ringRot"></div></div>
+      <div class="ring-cap" id="ringCap" aria-live="polite">
+        <span class="mono" id="rcN">01 / 11</span>
+        <div class="rc-t"><b id="rcName"></b><span id="rcLine"></span></div>
+        <div class="rc-act"><button class="btn ghost" id="rcMore" type="button">看详情</button><a class="btn dark" id="rcGo" href="#" target="_blank" rel="noopener">打开 <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tilt" id="tilt" aria-label="从最好的部分开始">
+    <div class="pin">
+      <div class="tilt-plane" id="tiltPlane"></div>
+      <div class="tilt-copy" id="tiltCopy">
+        <p class="mono">02 — The good part</p>
+        <h2>从最好的<br>部分开始。</h2>
+        <p>不用从零开始搜。53 个筛过的网站，网页、产品、动效、品牌、声音、AI 工作流，每一个都写清楚适合什么时候打开。</p>
+        <a class="btn dark" href="#index">按方向浏览 <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec idx" id="index" aria-label="分类目录">
+    <div class="pin">
+      <div class="idx-ticks" id="idxTicks" aria-hidden="true"></div>
+      <div class="idx-list"><ol id="idxList"></ol></div>
+      <div class="idx-stage" id="idxStage"><div class="idx-cam" id="idxCam"></div></div>
+      <div class="idx-meta" id="idxMeta" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="sec cut" id="cut" aria-label="少走弯路">
+    <div class="pin">
+      <p class="cut-t" id="cutT">Take the <em>shortcut.</em> 少走弯路，跳过漫长的搜索。</p>
+      <div class="cut-stack" id="cutStack" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="lib" id="library" aria-label="全部网站">
+    <div class="lib-panel" id="libPanel">
+      <div class="lib-head">
+        <div>
+          <p class="mono">03 — The library</p>
+          <h2>全部入口 <sup id="libCount">53</sup></h2>
+        </div>
+        <label class="search">
+          <span class="sr-only">搜索网站</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="试试：字体、深色、落地页、音效" autocomplete="off" spellcheck="false">
+          <kbd class="mono">/</kbd>
+        </label>
+      </div>
+      <div class="chips" id="chips" role="tablist" aria-label="分类筛选"></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>没有找到。换个词，或者 <button type="button" id="clearQ">清空筛选</button></p>
+    </div>
+  </section>
+
+  <footer class="foot" id="contact">
+    <div class="f-row">
+      <div class="f-me">
+        <img src="assets/yy-avatar.webp" width="64" height="64" alt="瑶叶头像" loading="lazy">
+        <div><b>瑶叶</b><p>9 年大厂营销运营操盘手 × AI 探索者</p></div>
+      </div>
+      <div class="f-col">
+        <span class="mono">小红书</span>
+        <img class="qr" src="assets/qr-xhs.png" width="120" height="120" alt="小红书二维码：瑶叶" loading="lazy">
+        <button type="button" class="copy" data-copy="606101074">小红书号 <b>606101074</b></button>
+        <a class="ln-a" href="https://www.xiaohongshu.com/user/profile/570ae7944775a75290e9ebf8" target="_blank" rel="noopener">去主页关注 ↗</a>
+      </div>
+      <div class="f-col">
+        <span class="mono">邮箱</span>
+        <p>合作、投稿，或推荐新的灵感网站，欢迎来信。</p>
+        <a class="ln-a" href="mailto:yaoyaoye822@163.com?subject=Design%2B%2B">yaoyaoye822@163.com</a>
+        <button type="button" class="copy" data-copy="yaoyaoye822@163.com">复制邮箱</button>
+      </div>
+      <div class="f-col">
+        <span class="mono">说明</span>
+        <p>部分收录自 <a class="ln-a" href="https://x.com/yanliudreamer/status/2110649301257060368" target="_blank" rel="noopener">@Dreameryanyan</a>。截图与网站内容归原作者所有。</p>
+        <a class="ln-a" href="https://yaoyepro.github.io/design-plus/" target="_blank" rel="noopener">旧版 Design+ ↗</a>
+      </div>
+    </div>
+    <div class="f-big" aria-hidden="true">Design<em>++</em></div>
+    <div class="f-bot mono"><span>© 2026 瑶叶 · yaoyepro</span><a href="#top">回到顶部 ↑</a></div>
+  </footer>
+</main>
+
+<dialog class="detail" id="detail" aria-labelledby="dName">
+  <div class="d-in">
+    <div class="d-win">
+      <div class="d-bar"><i></i><i></i><i></i><span class="mono" id="dUrl"></span></div>
+      <div class="d-view"><img id="dImg" alt=""></div>
+    </div>
+    <div class="d-side">
+      <div class="d-top">
+        <span class="mono" id="dNum"></span>
+        <span class="d-nav">
+          <button type="button" id="dPrev" aria-label="上一个">←</button>
+          <button type="button" id="dNext" aria-label="下一个">→</button>
+          <button type="button" id="dClose" aria-label="关闭">✕</button>
+        </span>
+      </div>
+      <p class="mono d-tag" id="dTag"></p>
+      <h3 id="dName"></h3>
+      <p class="d-line" id="dLine"></p>
+      <p class="d-desc" id="dDesc"></p>
+      <blockquote id="dQuote"></blockquote>
+      <dl>
+        <dt class="mono">什么时候打开</dt><dd id="dUse"></dd>
+        <dt class="mono">适合</dt><dd id="dMood"></dd>
+        <dt class="mono">分类</dt><dd id="dGroups"></dd>
+      </dl>
+      <a class="btn light lg" id="dGo" href="#" target="_blank" rel="noopener">打开 <span id="dDomain"></span> <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="yy-logo" viewBox="0 0 200 200"><path d="M 147.97 28.92 L 144.96 27.91 L 127.88 34.28 L 97.57 39.97 L 76.81 46.67 L 51.69 60.57 L 29.42 81.33 L 16.86 101.09 L 11.00 121.68 L 12.00 136.92 L 21.72 167.57 L 22.55 185.65 L 25.07 186.15 L 33.94 180.29 L 52.19 163.71 L 64.25 147.81 L 70.44 134.24 L 71.45 124.03 L 67.77 111.97 L 60.40 100.42 L 48.84 88.19 L 57.72 89.37 L 65.76 93.39 L 73.46 100.25 L 79.65 109.46 L 96.23 89.37 L 133.24 59.73 L 130.06 67.93 L 124.36 76.31 L 101.26 101.09 L 91.54 113.81 L 85.01 126.21 L 77.31 146.63 L 70.44 158.52 L 59.73 170.75 L 46.00 182.80 L 65.76 184.14 L 79.99 182.47 L 92.38 178.45 L 105.78 170.25 L 109.29 165.05 L 102.26 138.10 L 103.60 135.25 L 129.89 147.97 L 132.40 147.47 L 137.59 141.78 L 151.83 118.34 L 158.19 94.06 L 158.69 76.14 L 156.85 58.56 L 152.83 41.31 Z"/><path d="M 110.63 144.79 L 109.46 146.97 L 117.67 182.30 L 119.34 183.31 L 121.52 182.64 L 127.71 173.93 L 135.42 182.80 L 137.43 183.47 L 140.10 182.30 L 141.28 179.96 L 140.94 177.78 L 134.75 169.07 L 145.46 165.22 L 146.13 163.88 L 145.63 162.04 L 112.81 144.63 Z"/><path d="M 171.59 14.52 L 169.74 13.85 L 167.57 13.85 L 165.05 15.02 L 154.84 28.58 L 153.84 30.93 L 153.84 32.94 L 154.67 35.11 L 156.35 36.79 L 157.69 37.46 L 159.86 37.62 L 162.54 36.62 L 172.92 23.39 L 174.26 20.54 L 174.26 18.54 L 173.09 15.86 Z"/><path d="M 188.00 38.80 L 185.99 36.95 L 183.98 36.29 L 182.13 36.29 L 165.72 43.49 L 163.71 46.00 L 163.38 47.00 L 163.71 50.35 L 164.38 51.52 L 166.39 53.20 L 169.58 53.70 L 185.48 47.17 L 187.16 46.16 L 188.67 43.99 L 189.00 41.81 Z"/></symbol></svg>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
