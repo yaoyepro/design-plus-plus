@@ -64,11 +64,11 @@
     el.innerHTML = el.textContent.split(' ').map(w => `<span class="w"><span>${esc(w)}</span></span>`).join(' ');
   });
   document.querySelectorAll('.w > span').forEach((el, i) => el.style.setProperty('--d', (.08 + i * .07) + 's'));
-  const FN = innerWidth < 700 ? 18 : 30;
+  const FN = innerWidth < 700 ? 34 : 64;
   const pool = shuffled(SITES);
   const flyers = [];
   for (let i = 0; i < FN; i++) {
-    const el = makeCard(pool[i % pool.length], 'fc', false, i < 18);
+    const el = makeCard(pool[i % pool.length], 'fc', false, true);
     let x = rnd() * 2 - 1, y = rnd() * 2 - 1;
     if (Math.abs(x) < .3 && Math.abs(y) < .4) x += x < 0 ? -.4 : .4;
     flyers.push({ el, x, y, z0: i / FN + rnd() * .02, r: (rnd() - .5) * 12, sp: .85 + rnd() * .3 });
@@ -404,3 +404,6 @@
     requestAnimationFrame(tick);
   })();
 })();
+
+/* mascot */
+(function(){ const b=document.getElementById('yyBtn'); if(!b) return; b.addEventListener('click',e=>{ e.preventDefault(); const t=document.getElementById('contact'); scrollTo({top:t.getBoundingClientRect().top+scrollY,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }); setTimeout(()=>{ b.classList.add('hello'); setTimeout(()=>b.classList.remove('hello'),3200); },3200); })();

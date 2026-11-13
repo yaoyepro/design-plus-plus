@@ -1,6 +1,6 @@
 import asyncio, json, sys
 from playwright.async_api import async_playwright
-OUT = sys.argv[1]; URL = 'http://127.0.0.1:8765/'
+OUT = sys.argv[1]; URL = 'http://127.0.0.1:8791/'
 async def run(p, name, vp, mobile=False):
     b = await p.chromium.launch()
     ctx = await b.new_context(viewport=vp, device_scale_factor=1, is_mobile=mobile, has_touch=mobile)
@@ -29,3 +29,4 @@ async def main():
         await run(p,'d',{'width':1440,'height':900})
         await run(p,'m',{'width':390,'height':844},True)
 asyncio.run(main())
+
