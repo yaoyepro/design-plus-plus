@@ -285,21 +285,22 @@ button.card:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; 
 .yy-bubble { position: absolute; right: 6px; bottom: 96px; white-space: nowrap; padding: 7px 12px; border-radius: 12px; font-size: 12.5px; font-weight: 500; color: var(--ink); background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 10px 22px -14px rgba(0,0,0,.35); opacity: 0; transform: translateY(8px) scale(.9); transform-origin: 85% 100%; pointer-events: none; transition: opacity .35s var(--ease), transform .5s var(--ease); }
 .yy-btn:hover .yy-bubble, .yy.hello .yy-bubble { opacity: 1; transform: none; }
 .yy.open .yy-bubble { opacity: 0; }
-.yy-pop { position: absolute; right: 0; bottom: 96px; width: 244px; max-width: calc(100vw - 24px); padding: 12px; border-radius: 20px; background: rgba(250,250,251,.88); -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4); box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 0 0 1px var(--line), 0 30px 60px -24px rgba(0,0,0,.35); transform-origin: calc(100% - 44px) 100%; opacity: 0; visibility: hidden; transform: translateY(10px) scale(.88); transition: opacity .3s var(--ease), transform .55s var(--ease), visibility 0s .55s; }
+.yy-pop { position: absolute; right: 0; bottom: 96px; width: 244px; max-width: calc(100vw - 24px); padding: 12px; border-radius: 20px; background: linear-gradient(160deg, rgba(246,251,248,.9), rgba(232,242,236,.86)); -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4); box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 0 0 1px var(--line), 0 30px 60px -24px rgba(0,0,0,.35); transform-origin: calc(100% - 44px) 100%; opacity: 0; visibility: hidden; transform: translateY(10px) scale(.88); transition: opacity .3s var(--ease), transform .55s var(--ease), visibility 0s .55s; }
 .yy.open .yy-pop { opacity: 1; visibility: visible; transform: none; transition: opacity .3s var(--ease), transform .6s var(--ease), visibility 0s; }
 .yy-head { display: flex; align-items: center; gap: 10px; padding: 6px; margin: -2px -2px 8px; border-radius: 14px; transition: background .3s; }
-.yy-head:hover { background: rgba(13,13,15,.06); }
+.yy-head:hover { background: rgba(31,47,40,.07); }
+.yy-av { width: 38px; height: 38px; border-radius: 12px; object-fit: cover; background: #e3f1e8; flex: none; }
 .yy-who { display: block; min-width: 0; }
-.yy-who > span { display: block; }
-.yy-more { margin-top: 3px; font-size: 11px; font-weight: 500; color: var(--ink); }
-.yy-av { width: 38px; height: 38px; border-radius: 12px; object-fit: cover; background: #fff; }
-.yy-name { margin: 0; display: flex !important; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; letter-spacing: -.01em; }
-.yy-leaf { width: 15px; height: 15px; fill: currentColor; }
-.yy-bio { margin: 2px 0 0; font-size: 11px; color: var(--soft); line-height: 1.45; }
-.yy-tabs { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); padding: 3px; border-radius: 13px; background: rgba(13,13,15,.06); }
+.yy-line { display: flex; align-items: center; gap: 8px; }
+.yy-name { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 600; letter-spacing: -.01em; color: #17211c; }
+.yy-leaf { width: 14px; height: 14px; fill: currentColor; }
+.yy-pill { font-size: 11px; font-weight: 500; line-height: 1; color: #f3f8f4; background: #1f2f28; padding: 6px 9px; border-radius: 999px; white-space: nowrap; transition: transform .35s var(--ease); }
+.yy-head:hover .yy-pill { transform: translateX(2px); }
+.yy-bio { display: block; margin-top: 3px; font-size: 11px; color: #5c6b63; line-height: 1.45; }
+.yy-tabs { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); padding: 3px; border-radius: 13px; background: rgba(31,47,40,.08); }
 .yy-tabs button { position: relative; z-index: 1; height: 30px; border-radius: 10px; font-size: 13px; color: var(--soft); transition: color .3s; }
 .yy-tabs button.on { color: #fff; font-weight: 500; }
-.yy-ind { position: absolute; left: 3px; top: 3px; bottom: 3px; width: calc((100% - 6px) / 2); border-radius: 10px; background: var(--ink); transition: transform .5s var(--ease); }
+.yy-ind { position: absolute; left: 3px; top: 3px; bottom: 3px; width: calc((100% - 6px) / 2); border-radius: 10px; background: #1f2f28; transition: transform .5s var(--ease); }
 .yy-pop[data-tab='mail'] .yy-ind { transform: translateX(100%); }
 .yy-panes { padding-top: 12px; }
 .yy-pane { display: none; }
@@ -307,7 +308,7 @@ button.card:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; 
 @keyframes yyPane { from { opacity: 0; transform: translateY(6px); } }
 .yy-qr { width: 148px; height: 148px; margin: 0 auto 10px; padding: 9px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 14px 28px -18px rgba(0,0,0,.4); }
 .yy-qr img { width: 100%; height: 100%; object-fit: contain; }
-.yy-follow { width: 100%; justify-content: center; padding: 10px 16px; font-size: 13px; }
+.yy-follow { background: #1f2f28; color: #f3f8f4; width: 100%; justify-content: center; padding: 10px 16px; font-size: 13px; }
 .yy-cap { margin: 8px 0 0; text-align: center; font-size: 12px; color: var(--soft); }
 .yy-row { width: 100%; display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 11px; border-radius: 12px; text-align: left; box-shadow: inset 0 0 0 1px var(--line); transition: background .3s; }
 .yy-row:hover { background: rgba(13,13,15,.05); }
@@ -323,3 +324,10 @@ button.card:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; 
 .yy-site b { font-weight: 500; }
 @media (max-width: 700px) { .yy { right: 4px; bottom: 4px; } .yy-btn { width: 70px; height: 78px; } .yy-body img { width: 74px; margin-left: -37px; } .yy-bubble { bottom: 82px; } .yy-pop { bottom: 82px; width: 232px; } }
 @media (prefers-reduced-motion: reduce) { .yy-body, .yy-shadow { animation: none; } }
+
+.f-me { flex-direction: column; justify-content: space-between; gap: 28px; }
+.f-id { display: flex; gap: 14px; align-items: flex-start; }
+.f-id:hover b { text-decoration: underline; text-underline-offset: 4px; }
+.f-site { align-self: flex-start; margin-top: auto; font-size: 14px; padding: 10px 16px; border-radius: 999px; background: var(--ink); color: #fff; transition: transform .35s var(--ease); }
+.f-site:hover { transform: translateY(-2px); }
+.btn.dark.yy-follow { background: #1f2f28; color: #f3f8f4; }
