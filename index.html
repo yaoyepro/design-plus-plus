@@ -124,6 +124,7 @@
       <div class="f-col">
         <span class="mono">说明</span>
         <p>部分收录自 <a class="ln-a" href="https://x.com/yanliudreamer/status/2110649301257060368" target="_blank" rel="noopener">@Dreameryanyan</a>。截图与网站内容归原作者所有。</p>
+        <a class="ln-a" href="https://yaoye.meoo.zone/" target="_blank" rel="noopener">瑶叶的个人网站 ↗</a>
         <a class="ln-a" href="https://yaoyepro.github.io/design-plus/" target="_blank" rel="noopener">旧版 Design+ ↗</a>
       </div>
     </div>
@@ -162,7 +163,34 @@
   </div>
 </dialog>
 
-<a class="yy-btn" id="yyBtn" href="#contact" aria-label="小瑶叶：去页脚关注瑶叶"><span class="yy-fig" aria-hidden="true"><span class="yy-shadow"></span><span class="yy-body"><img class="yy-a" src="assets/yy-wave.webp" alt="" width="360" height="347"><img class="yy-b" src="assets/yy-idea.webp" alt="" width="360" height="360"></span></span><span class="yy-bubble" aria-hidden="true">Hi，关注我呀</span></a>
+<div class="yy" id="yy">
+  <div class="yy-pop" id="yyPop" role="dialog" aria-label="关注瑶叶" data-tab="xhs">
+    <div class="yy-head">
+      <img class="yy-av" src="assets/yy-avatar.webp" alt="" width="64" height="64">
+      <div><p class="yy-name">瑶叶 <svg class="yy-leaf" viewBox="0 0 200 200" aria-hidden="true"><use href="#yy-logo"/></svg></p><p class="yy-bio">9 年大厂营销运营操盘手 × AI 探索者</p></div>
+    </div>
+    <div class="yy-tabs" role="tablist" aria-label="联系方式">
+      <span class="yy-ind" aria-hidden="true"></span>
+      <button type="button" role="tab" data-tab="xhs" class="on" aria-selected="true">小红书</button>
+      <button type="button" role="tab" data-tab="mail" aria-selected="false">邮箱</button>
+    </div>
+    <div class="yy-panes">
+      <div class="yy-pane" data-pane="xhs">
+        <div class="yy-qr"><img src="assets/qr-xhs.png" alt="小红书二维码：瑶叶" width="448" height="448" loading="lazy"></div>
+        <a class="btn dark yy-follow" href="https://www.xiaohongshu.com/user/profile/570ae7944775a75290e9ebf8" target="_blank" rel="noopener">＋ 关注一下</a>
+        <p class="yy-cap">打开小红书，扫一扫</p>
+        <button type="button" class="yy-row" data-copy="606101074"><span>小红书号</span><b>606101074</b><i aria-hidden="true">复制</i></button>
+      </div>
+      <div class="yy-pane" data-pane="mail">
+        <div class="yy-mail"><p>合作、投稿，或推荐新的灵感网站，欢迎来信。</p></div>
+        <a class="btn dark yy-follow" href="mailto:yaoyaoye822@163.com?subject=Design%2B%2B">写邮件 ↗</a>
+        <button type="button" class="yy-row" data-copy="yaoyaoye822@163.com"><span>邮箱</span><b>yaoyaoye822@163.com</b><i aria-hidden="true">复制</i></button>
+      </div>
+    </div>
+    <a class="yy-site" href="https://yaoye.meoo.zone/" target="_blank" rel="noopener"><span>瑶叶的个人网站</span><b>yaoye.meoo.zone ↗</b></a>
+  </div>
+  <button class="yy-btn" id="yyBtn" type="button" aria-expanded="false" aria-controls="yyPop" aria-label="小瑶叶：关注瑶叶"><span class="yy-fig" aria-hidden="true"><span class="yy-shadow"></span><span class="yy-body"><img class="yy-a" src="assets/yy-wave.webp" alt="" width="360" height="347"><img class="yy-b" src="assets/yy-idea.webp" alt="" width="360" height="360"></span></span><span class="yy-bubble" aria-hidden="true">Hi，关注我呀</span></button>
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

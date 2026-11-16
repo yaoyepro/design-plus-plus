@@ -271,17 +271,51 @@ button.card:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; 
 }
 
 /* mascot */
-.yy-btn { position: fixed; right: 18px; bottom: 12px; z-index: 40; display: block; width: 104px; height: 116px; perspective: 520px; -webkit-tap-highlight-color: transparent; }
+.yy { position: fixed; right: 18px; bottom: 12px; z-index: 40; }
+.yy-btn { position: relative; display: block; width: 104px; height: 116px; perspective: 520px; -webkit-tap-highlight-color: transparent; }
 .yy-fig { position: absolute; inset: 0; transform-style: preserve-3d; }
 .yy-shadow { position: absolute; left: 50%; bottom: 2px; width: 64px; height: 12px; margin-left: -32px; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.3), transparent); animation: yyShadow 4.8s ease-in-out infinite; }
 .yy-body { position: absolute; inset: 0; transform-origin: 50% 100%; animation: yyBob 4.8s ease-in-out infinite; }
 .yy-body img { height: auto; position: absolute; left: 50%; bottom: 6px; width: 112px; max-width: none; margin-left: -56px; transform-origin: 50% 100%; filter: drop-shadow(0 0 .8px #fff) drop-shadow(0 0 1.2px #fff) drop-shadow(0 12px 14px rgba(0,0,0,.2)); transition: opacity .35s var(--ease), transform .7s var(--ease); }
 .yy-b { opacity: 0; transform: scale(.9) rotate(-5deg); }
-.yy-btn:hover .yy-a { opacity: 0; transform: scale(.94) rotate(4deg); }
-.yy-btn:hover .yy-b { opacity: 1; transform: scale(1.04); }
+.yy-btn:hover .yy-a, .yy.open .yy-a { opacity: 0; transform: scale(.94) rotate(4deg); }
+.yy-btn:hover .yy-b, .yy.open .yy-b { opacity: 1; transform: scale(1.04); }
 @keyframes yyBob { 0%, 100% { transform: translateY(0) rotate(-1.6deg); } 50% { transform: translateY(-8px) rotate(1.6deg); } }
 @keyframes yyShadow { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(.74); opacity: .55; } }
 .yy-bubble { position: absolute; right: 8px; bottom: 122px; white-space: nowrap; padding: 7px 12px; border-radius: 12px; font-size: 12.5px; font-weight: 500; color: var(--ink); background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 10px 22px -14px rgba(0,0,0,.35); opacity: 0; transform: translateY(8px) scale(.9); transform-origin: 85% 100%; pointer-events: none; transition: opacity .35s var(--ease), transform .5s var(--ease); }
-.yy-btn:hover .yy-bubble, .yy-btn.hello .yy-bubble { opacity: 1; transform: none; }
-@media (max-width: 700px) { .yy-btn { right: 6px; bottom: 6px; width: 84px; height: 94px; } .yy-body img { width: 90px; margin-left: -45px; } .yy-bubble { bottom: 98px; } }
+.yy-btn:hover .yy-bubble, .yy.hello .yy-bubble { opacity: 1; transform: none; }
+.yy.open .yy-bubble { opacity: 0; }
+.yy-pop { position: absolute; right: 0; bottom: 124px; width: 300px; max-width: calc(100vw - 24px); padding: 14px; border-radius: 24px; background: rgba(250,250,251,.88); -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4); box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 0 0 1px var(--line), 0 30px 60px -24px rgba(0,0,0,.35); transform-origin: calc(100% - 44px) 100%; opacity: 0; visibility: hidden; transform: translateY(10px) scale(.88); transition: opacity .3s var(--ease), transform .55s var(--ease), visibility 0s .55s; }
+.yy.open .yy-pop { opacity: 1; visibility: visible; transform: none; transition: opacity .3s var(--ease), transform .6s var(--ease), visibility 0s; }
+.yy-head { display: flex; align-items: center; gap: 12px; padding: 2px 2px 12px; }
+.yy-av { width: 46px; height: 46px; border-radius: 15px; object-fit: cover; background: #fff; }
+.yy-name { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; letter-spacing: -.01em; }
+.yy-leaf { width: 15px; height: 15px; fill: currentColor; }
+.yy-bio { margin: 2px 0 0; font-size: 12px; color: var(--soft); line-height: 1.45; }
+.yy-tabs { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); padding: 3px; border-radius: 13px; background: rgba(13,13,15,.06); }
+.yy-tabs button { position: relative; z-index: 1; height: 32px; border-radius: 10px; font-size: 13px; color: var(--soft); transition: color .3s; }
+.yy-tabs button.on { color: #fff; font-weight: 500; }
+.yy-ind { position: absolute; left: 3px; top: 3px; bottom: 3px; width: calc((100% - 6px) / 2); border-radius: 10px; background: var(--ink); transition: transform .5s var(--ease); }
+.yy-pop[data-tab='mail'] .yy-ind { transform: translateX(100%); }
+.yy-panes { padding-top: 14px; }
+.yy-pane { display: none; }
+.yy-pop[data-tab='xhs'] [data-pane='xhs'], .yy-pop[data-tab='mail'] [data-pane='mail'] { display: block; animation: yyPane .5s var(--ease) both; }
+@keyframes yyPane { from { opacity: 0; transform: translateY(6px); } }
+.yy-qr { width: 184px; height: 184px; margin: 0 auto 12px; padding: 12px; border-radius: 20px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 14px 28px -18px rgba(0,0,0,.4); }
+.yy-qr img { width: 100%; height: 100%; object-fit: contain; }
+.yy-follow { width: 100%; justify-content: center; }
+.yy-cap { margin: 10px 0 12px; text-align: center; font-size: 12px; color: var(--soft); }
+.yy-row { width: 100%; display: flex; align-items: center; gap: 10px; height: 42px; padding: 0 12px; border-radius: 13px; text-align: left; box-shadow: inset 0 0 0 1px var(--line); transition: background .3s; }
+.yy-row:hover { background: rgba(13,13,15,.05); }
+.yy-row span { color: var(--soft); font-size: 12px; flex: none; }
+.yy-row b { flex: 1; min-width: 0; font-weight: 500; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.yy-row i { font-style: normal; font-size: 12px; color: var(--soft); }
+.yy-mail { padding: 14px; border-radius: 18px; background: rgba(13,13,15,.05); margin-bottom: 12px; }
+.yy-mail p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--soft); }
+.yy-mail + .yy-follow { margin-bottom: 10px; }
+.yy-site { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding: 11px 12px; border-radius: 13px; font-size: 12.5px; background: rgba(13,13,15,.05); transition: background .3s; }
+.yy-site:hover { background: rgba(13,13,15,.1); }
+.yy-site span { color: var(--soft); }
+.yy-site b { font-weight: 500; }
+@media (max-width: 700px) { .yy { right: 6px; bottom: 6px; } .yy-btn { width: 84px; height: 94px; } .yy-body img { width: 90px; margin-left: -45px; } .yy-bubble { bottom: 98px; } .yy-pop { bottom: 100px; } }
 @media (prefers-reduced-motion: reduce) { .yy-body, .yy-shadow { animation: none; } }

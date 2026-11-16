@@ -406,4 +406,19 @@
 })();
 
 /* mascot */
-(function(){ const b=document.getElementById('yyBtn'); if(!b) return; b.addEventListener('click',e=>{ e.preventDefault(); const t=document.getElementById('contact'); scrollTo({top:t.getBoundingClientRect().top+scrollY,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }); setTimeout(()=>{ b.classList.add('hello'); setTimeout(()=>b.classList.remove('hello'),3200); },3200); })();
+(function () {
+  const yy = document.getElementById('yy'), btn = document.getElementById('yyBtn'), pop = document.getElementById('yyPop');
+  if (!yy) return;
+  let open = false;
+  pop.inert = true;
+  const set = v => { open = v; yy.classList.toggle('open', v); btn.setAttribute('aria-expanded', String(v)); pop.inert = !v; };
+  btn.addEventListener('click', e => { e.stopPropagation(); set(!open); });
+  pop.addEventListener('click', e => e.stopPropagation());
+  document.addEventListener('click', () => { if (open) set(false); });
+  addEventListener('keydown', e => { if (open && e.key === 'Escape') { set(false); btn.focus(); } });
+  pop.querySelectorAll('[data-tab]').forEach(t => t.addEventListener('click', () => {
+    pop.querySelectorAll('[data-tab]').forEach(x => { x.classList.toggle('on', x === t); x.setAttribute('aria-selected', String(x === t)); });
+    pop.dataset.tab = t.dataset.tab;
+  }));
+  setTimeout(() => { if (!open) { yy.classList.add('hello'); setTimeout(() => yy.classList.remove('hello'), 3200); } }, 3200);
+})();
